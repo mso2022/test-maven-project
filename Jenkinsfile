@@ -1,11 +1,19 @@
-node ("main")
-{
-	stage("MavenApp-Unit Tests")
-	{
-		echo "Unit Tests execution" 
-	}	
-	stage("MavenApp-Package")
-	{
-		echo "Create Jar file" 
-	}	
+pipeline {
+    
+    agent any
+    
+    stages {
+        stage('Maven-App Unit Tests') {
+	        steps {
+	            echo "Unit Tests execution"
+	        }
+           
+        }
+        stage('Maven-App Package') {
+           steps {
+               echo "Create Jar file"
+           }
+           
+        }
+    }
 }
